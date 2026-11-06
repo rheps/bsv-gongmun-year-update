@@ -1,0 +1,163 @@
+{
+ "연도": 2026,
+ "설명": "2026년 공휴일·대체공휴일 목록(관공서의 공휴일에 관한 규정). 날짜 옮기기 도구가 읽음.",
+ "근거": "국가법령정보센터 「관공서의 공휴일에 관한 규정」[시행 2026. 5. 11.][대통령령 제36290호, 2026. 4. 30., 일부개정](https://www.law.go.kr/LSW/lsInfoP.do?lsiSeq=285779&efYd=20260511) 제2조·제3조 원문, 부칙(2026-05-01 시행, 제2조제2호는 2026-05-11 시행); 인사혁신처 보도자료 「올해부터 노동절, 제헌절 공휴일로」(2026-04-28, 대한민국 정책브리핑); 우주항공청 보도자료 「2026년 월력요항」 발표(2025-06-30); 중앙선거관리위원회 선거일정 「제9회 전국동시지방선거 주요사무일정」(실시일 2026-06-03). 2026-11-04 확인. 임시공휴일 지정 공식 발표는 찾지 못함",
+ "작성일": "2026-11-04",
+ "모두확인됨": true,
+ "holidays": [
+  {
+   "date": "2026-01-01",
+   "name": "신정",
+   "source_url": "https://www.kasa.go.kr/prog/plcyBrf/brief/kor/sub01_01_04/view.do?plcyBrfNo=202",
+   "verified": true,
+   "note": "우주항공청 보도자료 「2026년 월력요항」 발표(2025-06-30); 규정 제2조제3호 / 2026-11-04 확인"
+  },
+  {
+   "date": "2026-02-16",
+   "name": "설날 연휴",
+   "source_url": "https://www.kasa.go.kr/prog/plcyBrf/brief/kor/sub01_01_04/view.do?plcyBrfNo=202",
+   "verified": true,
+   "note": "우주항공청 보도자료 「2026년 월력요항」 발표(2025-06-30)(설날 2월 17일, 연휴 2월 16~18일); 규정 제2조제4호 / 2026-11-04 확인"
+  },
+  {
+   "date": "2026-02-17",
+   "name": "설날",
+   "source_url": "https://www.kasa.go.kr/prog/plcyBrf/brief/kor/sub01_01_04/view.do?plcyBrfNo=202",
+   "verified": true,
+   "note": "우주항공청 보도자료 「2026년 월력요항」 발표(2025-06-30); 규정 제2조제4호 / 2026-11-04 확인"
+  },
+  {
+   "date": "2026-02-18",
+   "name": "설날 연휴",
+   "source_url": "https://www.kasa.go.kr/prog/plcyBrf/brief/kor/sub01_01_04/view.do?plcyBrfNo=202",
+   "verified": true,
+   "note": "우주항공청 보도자료 「2026년 월력요항」 발표(2025-06-30); 규정 제2조제4호 / 2026-11-04 확인"
+  },
+  {
+   "date": "2026-03-01",
+   "name": "삼일절",
+   "source_url": "https://www.kasa.go.kr/prog/plcyBrf/brief/kor/sub01_01_04/view.do?plcyBrfNo=202",
+   "verified": true,
+   "note": "우주항공청 보도자료 「2026년 월력요항」 발표(2025-06-30); 국경일(규정 제2조제2호) / 2026-11-04 확인"
+  },
+  {
+   "date": "2026-03-02",
+   "name": "대체공휴일(삼일절)",
+   "source_url": "https://www.kasa.go.kr/prog/plcyBrf/brief/kor/sub01_01_04/view.do?plcyBrfNo=202",
+   "verified": true,
+   "note": "우주항공청 보도자료 「2026년 월력요항」 발표(2025-06-30)(3·1절 대체공휴일); 규정 제3조 / 2026-11-04 확인"
+  },
+  {
+   "date": "2026-05-01",
+   "name": "노동절",
+   "source_url": "https://www.law.go.kr/LSW/lsInfoP.do?lsiSeq=285779&efYd=20260511",
+   "verified": true,
+   "note": "국가법령정보센터 「관공서의 공휴일에 관한 규정」[시행 2026. 5. 11.][대통령령 제36290호, 2026. 4. 30., 일부개정] 제2조제6호(노동절, 2026-05-01 시행) 원문 확인. 보조: 인사혁신처 보도자료 「올해부터 노동절, 제헌절 공휴일로」(2026-04-28, 대한민국 정책브리핑) https://www.korea.kr/common/download.do?fileId=198445634&tblKey=GMN. 금요일이라 대체공휴일 없음 / 2026-11-04 확인"
+  },
+  {
+   "date": "2026-05-05",
+   "name": "어린이날",
+   "source_url": "https://www.kasa.go.kr/prog/plcyBrf/brief/kor/sub01_01_04/view.do?plcyBrfNo=202",
+   "verified": true,
+   "note": "우주항공청 보도자료 「2026년 월력요항」 발표(2025-06-30); 규정 제2조제7호 / 2026-11-04 확인"
+  },
+  {
+   "date": "2026-05-24",
+   "name": "부처님오신날",
+   "source_url": "https://www.kasa.go.kr/prog/plcyBrf/brief/kor/sub01_01_04/view.do?plcyBrfNo=202",
+   "verified": true,
+   "note": "우주항공청 보도자료 「2026년 월력요항」 발표(2025-06-30)(부처님오신날 5.24, 일요일); 규정 제2조제5호 / 2026-11-04 확인"
+  },
+  {
+   "date": "2026-05-25",
+   "name": "대체공휴일(부처님오신날)",
+   "source_url": "https://www.kasa.go.kr/prog/plcyBrf/brief/kor/sub01_01_04/view.do?plcyBrfNo=202",
+   "verified": true,
+   "note": "우주항공청 보도자료 「2026년 월력요항」 발표(2025-06-30)(5월 23~25일 연휴); 규정 제3조 / 2026-11-04 확인"
+  },
+  {
+   "date": "2026-06-03",
+   "name": "전국동시지방선거일",
+   "source_url": "https://www.nec.go.kr/site/nec/ex/bbs/View.do?cbIdx=1104&bcIdx=289351",
+   "verified": true,
+   "note": "중앙선거관리위원회 선거일정 「제9회 전국동시지방선거 주요사무일정」(실시일 2026-06-03); 규정 제2조제10호의2(임기만료 선거일). 보조: 우주항공청 보도자료 「2026년 월력요항」 발표(2025-06-30) 공휴일 20일 계산에 포함 / 2026-11-04 확인"
+  },
+  {
+   "date": "2026-06-06",
+   "name": "현충일",
+   "source_url": "https://www.kasa.go.kr/prog/plcyBrf/brief/kor/sub01_01_04/view.do?plcyBrfNo=202",
+   "verified": true,
+   "note": "우주항공청 보도자료 「2026년 월력요항」 발표(2025-06-30)(토요일과 겹침, 현충일은 대체공휴일 대상 아님); 규정 제2조제8호 / 2026-11-04 확인"
+  },
+  {
+   "date": "2026-07-17",
+   "name": "제헌절",
+   "source_url": "https://www.law.go.kr/LSW/lsInfoP.do?lsiSeq=285779&efYd=20260511",
+   "verified": true,
+   "note": "국가법령정보센터 「관공서의 공휴일에 관한 규정」[시행 2026. 5. 11.][대통령령 제36290호, 2026. 4. 30., 일부개정] 제2조제2호(국경일 전체를 공휴일로, 2026-05-11 시행) 원문 확인, 국경일법 제2조제2호 제헌절 7월 17일. 보조: 인사혁신처 보도자료 「올해부터 노동절, 제헌절 공휴일로」(2026-04-28, 대한민국 정책브리핑) https://www.korea.kr/common/download.do?fileId=198445634&tblKey=GMN. 금요일이라 대체공휴일 없음 / 2026-11-04 확인"
+  },
+  {
+   "date": "2026-08-15",
+   "name": "광복절",
+   "source_url": "https://www.kasa.go.kr/prog/plcyBrf/brief/kor/sub01_01_04/view.do?plcyBrfNo=202",
+   "verified": true,
+   "note": "우주항공청 보도자료 「2026년 월력요항」 발표(2025-06-30); 국경일(규정 제2조제2호) / 2026-11-04 확인"
+  },
+  {
+   "date": "2026-08-17",
+   "name": "대체공휴일(광복절)",
+   "source_url": "https://www.kasa.go.kr/prog/plcyBrf/brief/kor/sub01_01_04/view.do?plcyBrfNo=202",
+   "verified": true,
+   "note": "우주항공청 보도자료 「2026년 월력요항」 발표(2025-06-30)(8월 15~17일 연휴); 규정 제3조 / 2026-11-04 확인"
+  },
+  {
+   "date": "2026-09-24",
+   "name": "추석 연휴",
+   "source_url": "https://www.kasa.go.kr/prog/plcyBrf/brief/kor/sub01_01_04/view.do?plcyBrfNo=202",
+   "verified": true,
+   "note": "우주항공청 보도자료 「2026년 월력요항」 발표(2025-06-30)(추석 9월 25일, 연휴 9월 24~26일); 규정 제2조제9호 / 2026-11-04 확인"
+  },
+  {
+   "date": "2026-09-25",
+   "name": "추석",
+   "source_url": "https://www.kasa.go.kr/prog/plcyBrf/brief/kor/sub01_01_04/view.do?plcyBrfNo=202",
+   "verified": true,
+   "note": "우주항공청 보도자료 「2026년 월력요항」 발표(2025-06-30); 규정 제2조제9호 / 2026-11-04 확인"
+  },
+  {
+   "date": "2026-09-26",
+   "name": "추석 연휴",
+   "source_url": "https://www.kasa.go.kr/prog/plcyBrf/brief/kor/sub01_01_04/view.do?plcyBrfNo=202",
+   "verified": true,
+   "note": "우주항공청 보도자료 「2026년 월력요항」 발표(2025-06-30)(토요일과 겹침, 설·추석은 일요일과 겹칠 때만 대체); 규정 제2조제9호 / 2026-11-04 확인"
+  },
+  {
+   "date": "2026-10-03",
+   "name": "개천절",
+   "source_url": "https://www.kasa.go.kr/prog/plcyBrf/brief/kor/sub01_01_04/view.do?plcyBrfNo=202",
+   "verified": true,
+   "note": "우주항공청 보도자료 「2026년 월력요항」 발표(2025-06-30); 국경일(규정 제2조제2호) / 2026-11-04 확인"
+  },
+  {
+   "date": "2026-10-05",
+   "name": "대체공휴일(개천절)",
+   "source_url": "https://www.kasa.go.kr/prog/plcyBrf/brief/kor/sub01_01_04/view.do?plcyBrfNo=202",
+   "verified": true,
+   "note": "우주항공청 보도자료 「2026년 월력요항」 발표(2025-06-30)(10월 3~5일 연휴); 규정 제3조 / 2026-11-04 확인"
+  },
+  {
+   "date": "2026-10-09",
+   "name": "한글날",
+   "source_url": "https://www.kasa.go.kr/prog/plcyBrf/brief/kor/sub01_01_04/view.do?plcyBrfNo=202",
+   "verified": true,
+   "note": "우주항공청 보도자료 「2026년 월력요항」 발표(2025-06-30); 국경일(규정 제2조제2호) / 2026-11-04 확인"
+  },
+  {
+   "date": "2026-12-25",
+   "name": "기독탄신일",
+   "source_url": "https://www.kasa.go.kr/prog/plcyBrf/brief/kor/sub01_01_04/view.do?plcyBrfNo=202",
+   "verified": true,
+   "note": "우주항공청 보도자료 「2026년 월력요항」 발표(2025-06-30); 규정 제2조제10호 / 2026-11-04 확인"
+  }
+ ]
+}

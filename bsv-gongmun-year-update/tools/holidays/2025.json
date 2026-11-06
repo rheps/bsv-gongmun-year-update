@@ -1,0 +1,142 @@
+{
+ "연도": 2025,
+ "설명": "2025년 공휴일·대체공휴일 목록(관공서의 공휴일에 관한 규정). 날짜 옮기기 도구가 읽음.",
+ "근거": "우주항공청 보도자료 「2025년도 월력요항」(2024-06-20) https://www.kasi.re.kr/kor/publication/post/newsMaterial/30071; 인사혁신처 임시공휴일 지정 2건(1/27 국무회의 의결, 6/3 공고 제2025-133호); 관공서의 공휴일에 관한 규정 https://www.law.go.kr/법령/관공서의공휴일에관한규정. 2026-11-04 확인",
+ "작성일": "2026-11-04",
+ "모두확인됨": true,
+ "holidays": [
+  {
+   "date": "2025-01-01",
+   "name": "신정",
+   "source_url": "https://www.kasi.re.kr/kor/publication/post/newsMaterial/30071",
+   "verified": true,
+   "note": "원래 날짜 비교용(지난해 공휴일). 우주항공청 「2025년도 월력요항」 발표(2024-06-20, 한국천문연구원 게시) 공휴일 수·연휴 목록과 일치; 관공서의 공휴일에 관한 규정 제2조 / 2026-11-04 확인"
+  },
+  {
+   "date": "2025-01-27",
+   "name": "임시공휴일",
+   "source_url": "https://www.korea.kr/news/policyNewsView.do?newsId=148938559",
+   "verified": true,
+   "note": "원래 날짜 비교용(지난해 공휴일). 인사혁신처 「1월 27일 임시공휴일 지정안」 국무회의 의결(대한민국 정책브리핑 2025-01-14) / 2026-11-04 확인"
+  },
+  {
+   "date": "2025-01-28",
+   "name": "설날 연휴",
+   "source_url": "https://www.kasi.re.kr/kor/publication/post/newsMaterial/30071",
+   "verified": true,
+   "note": "원래 날짜 비교용(지난해 공휴일). 우주항공청 「2025년도 월력요항」 발표(2024-06-20, 한국천문연구원 게시): 설날 1/29, 추석 10/6, 연휴·대체공휴일 목록에 있음 / 2026-11-04 확인"
+  },
+  {
+   "date": "2025-01-29",
+   "name": "설날",
+   "source_url": "https://www.kasi.re.kr/kor/publication/post/newsMaterial/30071",
+   "verified": true,
+   "note": "원래 날짜 비교용(지난해 공휴일). 우주항공청 「2025년도 월력요항」 발표(2024-06-20, 한국천문연구원 게시): 설날 1/29, 추석 10/6, 연휴·대체공휴일 목록에 있음 / 2026-11-04 확인"
+  },
+  {
+   "date": "2025-01-30",
+   "name": "설날 연휴",
+   "source_url": "https://www.kasi.re.kr/kor/publication/post/newsMaterial/30071",
+   "verified": true,
+   "note": "원래 날짜 비교용(지난해 공휴일). 우주항공청 「2025년도 월력요항」 발표(2024-06-20, 한국천문연구원 게시): 설날 1/29, 추석 10/6, 연휴·대체공휴일 목록에 있음 / 2026-11-04 확인"
+  },
+  {
+   "date": "2025-03-01",
+   "name": "삼일절",
+   "source_url": "https://www.kasi.re.kr/kor/publication/post/newsMaterial/30071",
+   "verified": true,
+   "note": "원래 날짜 비교용(지난해 공휴일). 우주항공청 「2025년도 월력요항」 발표(2024-06-20, 한국천문연구원 게시) 공휴일 수·연휴 목록과 일치; 관공서의 공휴일에 관한 규정 제2조 / 2026-11-04 확인"
+  },
+  {
+   "date": "2025-03-03",
+   "name": "대체공휴일(삼일절)",
+   "source_url": "https://www.kasi.re.kr/kor/publication/post/newsMaterial/30071",
+   "verified": true,
+   "note": "원래 날짜 비교용(지난해 공휴일). 우주항공청 「2025년도 월력요항」 발표(2024-06-20, 한국천문연구원 게시): 설날 1/29, 추석 10/6, 연휴·대체공휴일 목록에 있음 / 2026-11-04 확인"
+  },
+  {
+   "date": "2025-05-05",
+   "name": "어린이날·부처님오신날",
+   "source_url": "https://www.kasi.re.kr/kor/publication/post/newsMaterial/30071",
+   "verified": true,
+   "note": "원래 날짜 비교용(지난해 공휴일). 우주항공청 「2025년도 월력요항」 발표(2024-06-20, 한국천문연구원 게시): 설날 1/29, 추석 10/6, 연휴·대체공휴일 목록에 있음 / 2026-11-04 확인"
+  },
+  {
+   "date": "2025-05-06",
+   "name": "대체공휴일",
+   "source_url": "https://www.kasi.re.kr/kor/publication/post/newsMaterial/30071",
+   "verified": true,
+   "note": "원래 날짜 비교용(지난해 공휴일). 우주항공청 「2025년도 월력요항」 발표(2024-06-20, 한국천문연구원 게시): 설날 1/29, 추석 10/6, 연휴·대체공휴일 목록에 있음 / 2026-11-04 확인"
+  },
+  {
+   "date": "2025-06-03",
+   "name": "대통령선거일",
+   "source_url": "https://www.mpm.go.kr/mpm/comm/noti/mpmNotice/?boardId=bbs_0000000000000205&mode=view&cntId=928&category=&pageIdx=",
+   "verified": true,
+   "note": "원래 날짜 비교용(지난해 공휴일). 인사혁신처 공고 제2025-133호(2025-04-08): 제21대 대통령선거일 임시공휴일 지정 / 2026-11-04 확인"
+  },
+  {
+   "date": "2025-06-06",
+   "name": "현충일",
+   "source_url": "https://www.kasi.re.kr/kor/publication/post/newsMaterial/30071",
+   "verified": true,
+   "note": "원래 날짜 비교용(지난해 공휴일). 우주항공청 「2025년도 월력요항」 발표(2024-06-20, 한국천문연구원 게시) 공휴일 수·연휴 목록과 일치; 관공서의 공휴일에 관한 규정 제2조 / 2026-11-04 확인"
+  },
+  {
+   "date": "2025-08-15",
+   "name": "광복절",
+   "source_url": "https://www.kasi.re.kr/kor/publication/post/newsMaterial/30071",
+   "verified": true,
+   "note": "원래 날짜 비교용(지난해 공휴일). 우주항공청 「2025년도 월력요항」 발표(2024-06-20, 한국천문연구원 게시) 공휴일 수·연휴 목록과 일치; 관공서의 공휴일에 관한 규정 제2조 / 2026-11-04 확인"
+  },
+  {
+   "date": "2025-10-03",
+   "name": "개천절",
+   "source_url": "https://www.kasi.re.kr/kor/publication/post/newsMaterial/30071",
+   "verified": true,
+   "note": "원래 날짜 비교용(지난해 공휴일). 우주항공청 「2025년도 월력요항」 발표(2024-06-20, 한국천문연구원 게시) 공휴일 수·연휴 목록과 일치; 관공서의 공휴일에 관한 규정 제2조 / 2026-11-04 확인"
+  },
+  {
+   "date": "2025-10-05",
+   "name": "추석 연휴",
+   "source_url": "https://www.kasi.re.kr/kor/publication/post/newsMaterial/30071",
+   "verified": true,
+   "note": "원래 날짜 비교용(지난해 공휴일). 우주항공청 「2025년도 월력요항」 발표(2024-06-20, 한국천문연구원 게시): 설날 1/29, 추석 10/6, 연휴·대체공휴일 목록에 있음 / 2026-11-04 확인"
+  },
+  {
+   "date": "2025-10-06",
+   "name": "추석",
+   "source_url": "https://www.kasi.re.kr/kor/publication/post/newsMaterial/30071",
+   "verified": true,
+   "note": "원래 날짜 비교용(지난해 공휴일). 우주항공청 「2025년도 월력요항」 발표(2024-06-20, 한국천문연구원 게시): 설날 1/29, 추석 10/6, 연휴·대체공휴일 목록에 있음 / 2026-11-04 확인"
+  },
+  {
+   "date": "2025-10-07",
+   "name": "추석 연휴",
+   "source_url": "https://www.kasi.re.kr/kor/publication/post/newsMaterial/30071",
+   "verified": true,
+   "note": "원래 날짜 비교용(지난해 공휴일). 우주항공청 「2025년도 월력요항」 발표(2024-06-20, 한국천문연구원 게시): 설날 1/29, 추석 10/6, 연휴·대체공휴일 목록에 있음 / 2026-11-04 확인"
+  },
+  {
+   "date": "2025-10-08",
+   "name": "대체공휴일(추석)",
+   "source_url": "https://www.kasi.re.kr/kor/publication/post/newsMaterial/30071",
+   "verified": true,
+   "note": "원래 날짜 비교용(지난해 공휴일). 우주항공청 「2025년도 월력요항」 발표(2024-06-20, 한국천문연구원 게시): 설날 1/29, 추석 10/6, 연휴·대체공휴일 목록에 있음 / 2026-11-04 확인"
+  },
+  {
+   "date": "2025-10-09",
+   "name": "한글날",
+   "source_url": "https://www.kasi.re.kr/kor/publication/post/newsMaterial/30071",
+   "verified": true,
+   "note": "원래 날짜 비교용(지난해 공휴일). 우주항공청 「2025년도 월력요항」 발표(2024-06-20, 한국천문연구원 게시) 공휴일 수·연휴 목록과 일치; 관공서의 공휴일에 관한 규정 제2조 / 2026-11-04 확인"
+  },
+  {
+   "date": "2025-12-25",
+   "name": "기독탄신일",
+   "source_url": "https://www.kasi.re.kr/kor/publication/post/newsMaterial/30071",
+   "verified": true,
+   "note": "원래 날짜 비교용(지난해 공휴일). 우주항공청 「2025년도 월력요항」 발표(2024-06-20, 한국천문연구원 게시) 공휴일 수·연휴 목록과 일치; 관공서의 공휴일에 관한 규정 제2조 / 2026-11-04 확인"
+  }
+ ]
+}
