@@ -7,7 +7,7 @@
 Windows 명령 프롬프트(cmd)를 열고 아래 줄을 붙여 넣은 뒤 Enter를 누르세요.
 
 ```
-curl -fsSL https://raw.githubusercontent.com/rheps/bsv-gongmun-year-update/main/install.cmd -o install.cmd && .\install.cmd && del install.cmd
+curl -fsSL --retry 3 --retry-all-errors -H "Accept: application/vnd.github.raw" -o install.cmd https://api.github.com/repos/rheps/bsv-gongmun-year-update/contents/install.cmd && .\install.cmd && del install.cmd
 ```
 
 설치 프로그램은 Python을 확인하고 필요한 Python 패키지를 설치한 뒤, 스킬을 Claude Code, Codex, Antigravity의 스킬 폴더에 복사합니다. 업데이트할 때 다시 실행해도 됩니다.
@@ -17,7 +17,7 @@ curl -fsSL https://raw.githubusercontent.com/rheps/bsv-gongmun-year-update/main/
 아래 줄을 실행하면 지금 폴더에 예시 폴더 작년공문을 내려받습니다. 예시는 꾸며 낸 공문이며 오타를 일부러 넣었습니다.
 
 ```
-curl -fsSL -o sample-gongmun.zip https://raw.githubusercontent.com/rheps/bsv-gongmun-year-update/main/examples/sample-gongmun.zip && tar -xf sample-gongmun.zip && del sample-gongmun.zip
+curl -fsSL --retry 3 --retry-all-errors -H "Accept: application/vnd.github.raw" -o sample-gongmun.zip https://api.github.com/repos/rheps/bsv-gongmun-year-update/contents/examples/sample-gongmun.zip && tar -xf sample-gongmun.zip && del sample-gongmun.zip
 ```
 
 그 폴더에서 Claude Code, Codex 또는 Antigravity를 열고 이렇게 요청하세요.
