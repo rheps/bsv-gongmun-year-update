@@ -7,7 +7,7 @@
 Windows 명령 프롬프트(cmd)를 열고 아래 줄을 붙여 넣은 뒤 Enter를 누르세요.
 
 ```
-curl -fsSL https://raw.githubusercontent.com/rheps/bsv-gongmun-year-update/main/install.cmd -o install.cmd && install.cmd && del install.cmd
+curl -fsSL https://raw.githubusercontent.com/rheps/bsv-gongmun-year-update/main/install.cmd -o install.cmd && .\install.cmd && del install.cmd
 ```
 
 설치 프로그램은 Python을 확인하고 필요한 Python 패키지를 설치한 뒤, 스킬을 Claude Code, Codex, Antigravity의 스킬 폴더에 복사합니다. 업데이트할 때 다시 실행해도 됩니다.

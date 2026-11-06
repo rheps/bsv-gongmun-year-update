@@ -1,6 +1,6 @@
 @echo off
 rem bsv-gongmun-year-update installer for Windows cmd.
-rem Usage: curl -fsSL https://raw.githubusercontent.com/rheps/bsv-gongmun-year-update/main/install.cmd -o install.cmd && install.cmd && del install.cmd
+rem Usage: curl -fsSL https://raw.githubusercontent.com/rheps/bsv-gongmun-year-update/main/install.cmd -o install.cmd && .\install.cmd && del install.cmd
 setlocal EnableExtensions
 for /f "tokens=2 delims=:." %%A in ('chcp') do set "BSV_OLDCP=%%A"
 chcp 65001 >nul
@@ -35,7 +35,9 @@ if exist "%BSV_TMP%\src\install.py" goto run
 :zip
 curl -fsSL -o "%BSV_TMP%\src.zip" "https://github.com/%BSV_REPO%/archive/refs/heads/%BSV_BRANCH%.zip"
 if errorlevel 1 goto fail_download
-tar -xf "%BSV_TMP%\src.zip" -C "%BSV_TMP%"
+set "BSV_TAR=tar"
+if exist "%SystemRoot%\System32\tar.exe" set "BSV_TAR=%SystemRoot%\System32\tar.exe"
+"%BSV_TAR%" -xf "%BSV_TMP%\src.zip" -C "%BSV_TMP%"
 if errorlevel 1 goto fail_download
 for /d %%D in ("%BSV_TMP%\bsv-gongmun-year-update-*") do move "%%D" "%BSV_TMP%\src" >nul
 if exist "%BSV_TMP%\src\install.py" goto run
