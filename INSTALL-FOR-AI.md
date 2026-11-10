@@ -8,9 +8,9 @@ You are an AI coding agent (Claude Code, Codex or Antigravity) on Windows. The u
    ```
    mkdir "%TEMP%\bsv-gongmun-src"
    curl -fsSL --retry 3 -L -o "%TEMP%\bsv-gongmun-src\repo.zip" https://api.github.com/repos/rheps/bsv-gongmun-year-update/zipball/main
-   tar -xf "%TEMP%\bsv-gongmun-src\repo.zip" -C "%TEMP%\bsv-gongmun-src"
+   "%SystemRoot%\System32\tar.exe" -xf "%TEMP%\bsv-gongmun-src\repo.zip" -C "%TEMP%\bsv-gongmun-src"
    ```
-   The zip holds one folder `rheps-bsv-gongmun-year-update-<commit>`. Inside it, the folder `bsv-gongmun-year-update` is the skill.
+   Use Windows `tar.exe` as shown (in Git Bash: `/c/Windows/System32/tar.exe`); the GNU `tar` of Git Bash cannot read zip files. The zip holds one folder `rheps-bsv-gongmun-year-update-<commit>`. Inside it, the folder `bsv-gongmun-year-update` is the skill.
 2. Copy that skill folder into the skill folder of each agent. The home folder is `%USERPROFILE%` (in PowerShell `$env:USERPROFILE`, in Python `os.path.expanduser("~")`); use that value, not a path you guess:
    - Claude Code: `%USERPROFILE%\.claude\skills\bsv-gongmun-year-update`
    - Codex: `%USERPROFILE%\.codex\skills\bsv-gongmun-year-update`
@@ -22,9 +22,11 @@ You are an AI coding agent (Claude Code, Codex or Antigravity) on Windows. The u
 5. Delete the temporary folder.
 6. Tell the user, in Korean:
    > 설치를 마쳤습니다. 공문이 있는 폴더에서 Claude Code, Codex 또는 Antigravity를 열고 이렇게 요청하세요: 작년공문 폴더를 올해 공문으로 바꿔 줘
+   >
+   > CLI가 이미 열려 있었다면 닫았다가 다시 열어야 새 스킬을 찾습니다.
 
    If `check` says 한글 is missing, also say that 한글 2020 or later is needed for hwp files.
-7. Restart: if the skill is not offered in this session, tell the user to close and reopen the agent once.
+7. Restart: an agent lists skills when it starts. Tested with Claude Code 2.1.319: a skill installed during a session is not in that session's skill list; it appears after Claude Code is closed and opened again. If the user wants to use it in the same session anyway, read `%USERPROFILE%\.claude\skills\bsv-gongmun-year-update\SKILL.md` (or the Codex / Antigravity copy) and follow it exactly; that works without a restart.
 
 The repository also has `install.py` (`py -3 install.py` in the extracted folder), which does steps 2 and 3 in one go. You may use it instead.
 
@@ -33,7 +35,7 @@ The repository also has `install.py` (`py -3 install.py` in the extracted folder
 When the user asks for the example (or gives the link `https://api.github.com/repos/rheps/bsv-gongmun-year-update/contents/examples/sample-gongmun.zip`), run in the current folder:
 ```
 curl -fsSL --retry 3 -H "Accept: application/vnd.github.raw" -o sample-gongmun.zip https://api.github.com/repos/rheps/bsv-gongmun-year-update/contents/examples/sample-gongmun.zip
-tar -xf sample-gongmun.zip
+"%SystemRoot%\System32\tar.exe" -xf sample-gongmun.zip
 del sample-gongmun.zip
 ```
 This makes the folder `작년공문`. The example is made-up 공문 with deliberate typos. Then the user can ask: 작년공문 폴더를 올해 공문으로 바꿔 줘
