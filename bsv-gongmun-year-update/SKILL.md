@@ -20,6 +20,8 @@ Everything stays on this computer. Never send document contents, file names or �
    - Target school year = school year of today (Mar-Dec: this year; Jan-Feb: last year). Add `--target-school-year N` only if the teacher names another year.
    - If the teacher says the files are student records, add `--student-data`.
    - It prints `결과 폴더: ...`. Output is a new folder beside the input, `<input>_올해버전` (then `_올해버전2`, ...). Originals are never changed.
+   - Older documents (2022, 2023, 2024학년도 ...) also move into the target school year: Mar-Dec dates to the target year, Jan-Feb to the next, same week and weekday, holidays avoided. Only the target year's two holiday files are needed.
+   - **odt → txt only.** No odt file is ever output. A 공문 body odt becomes `<name>_업무관리시스템_붙여넣기.txt` (paste-ready: spaces from `text:s`, tabs and line breaks kept; list numbers as 1.→가.→1)→가)→(1)→(가) with 2-space indents; `붙임  1. …`; `  끝.`). Any other odt becomes `<name>_본문.txt`. A student-looking odt gets only its unchanged text as `_본문.txt`. Do not convert odt yourself.
    - Stops (exit 2) when a holiday file is missing or unverified: report the Korean message. Do not edit holiday files or pass `--allow-unverified-holidays` unless the teacher accepts a preview, and then say so.
    - Stops (exit 4) when 한글 is missing: tell the teacher 한글 2020+ is needed.
 3. **Proofread (윤문)** - always, unless the teacher says no. Steps 3-6 below.
@@ -44,6 +46,7 @@ Fix last year's typos and 비문 without touching content. Edit the Korean direc
 ## Report to the teacher (plain Korean, no code)
 - Result folder path, 검토표.xlsx, 검토표_윤문1.xlsx, 전후캡처비교 HTML (open it in a browser).
 - Counts by result (변환 완료, 원본 유지, 변환 안 함), files copied unchanged and why.
+- For each odt input, the txt file made from it (odt files are not made).
 - Student-looking files: how many, copied unchanged into `학생자료_변환안함`, not shown on the page.
 - 확인할 곳: top categories with counts from the 검토표 「확인할 곳」 sheet (e.g. 날짜 순서 바뀜, 사람 이름일 수 있음, 관련 문서 OOOO to fill in). For `원본 유지(서식 PDF)` list page and old → new dates to fix by hand.
 - 윤문: applied count by colour with a few examples, every 문장 다듬음 (id: before → after), blocked entries and why, how to undo (`되돌려 줘` + id).
@@ -54,6 +57,7 @@ Fix last year's typos and 비문 without touching content. Edit the Korean direc
 |---|---|
 | Writing a Python script to change dates | Run `convert`; it handles holidays, 관련, weekdays |
 | Saving results over the originals | The tool writes a new `_올해버전` folder |
+| Handing back an odt or converting odt by hand | The tool gives only txt for odt; point the teacher to that txt |
 | Marking a sentence fix `확정` | `제안`; it is still applied (blue) |
 | Rewriting a whole sentence in one entry | Smallest span, one fix per entry |
 | "Fixing" a flagged date/name/number | Leave it; mention it under 확인할 곳 |

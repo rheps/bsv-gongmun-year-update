@@ -15,6 +15,7 @@ OUT = None            # 일반 결과 폴더
 OUT_STUDENT = None    # 학생 자료로 보이는 파일을 그대로 복사할 폴더(결과 폴더 안 학생자료_변환안함)
 WORK = None
 TMP = None
+CRLF = chr(13) + chr(10)
 GROUP_DIR = {}        # 묶음 번호 → 결과 첫 폴더 이름
 import office
 
@@ -216,9 +217,20 @@ def run(items, progress=True):
                 if it.get("학생정보"):
                     # 학생 자료로 보이는 파일은 바꾸지 않고 이름도 그대로 학생자료_변환안함/에 복사한다
                     op = os.path.join(OUT_STUDENT, GROUP_DIR.get(it["zip"], it["zip"]), *it["rel"].split("/"))
-                    write_out(op, open(L(it["abs"]), "rb").read()); r["결과"].append(op)
+                    if ext == ".odt":
+                        # odt는 결과로 내지 않는다: 날짜를 바꾸지 않은 원래 글을 txt로 옮긴다
+                        op = os.path.splitext(op)[0] + "_본문.txt"
+                        with open(L(it["abs"]), "rb") as fh:
+                            plines = make_paste.plain_text(fh.read())
+                        write_out(op, (CRLF.join(plines) + CRLF).encode("utf-8-sig"))
+                    else:
+                        with open(L(it["abs"]), "rb") as fh:
+                            write_out(op, fh.read())
+                    r["결과"].append(op)
                     r["상태"] = "학생 자료(변환 안 함)"; r["그대로복사"] = True
                     r["비고"].append(_T("d.student_note"))
+                    if ext == ".odt":
+                        r["비고"].append("odt 파일이라 원래 글만 txt 파일로 옮겼습니다. 날짜는 바꾸지 않았습니다.")
                     continue
                 if ext == ".xls" and not office.soffice():
                     op = out_path(it); write_out(op, open(L(it["abs"]), "rb").read()); r["결과"].append(op)
@@ -346,7 +358,14 @@ def run(items, progress=True):
                     if mode == "odt":
                         jlog = []
                         title, pbody, patt = make_paste.parse(newb, jlog)
-                    if title:
+                    if mode == "odt" and not title:
+                        # 공문 본문 모양이 아닌 odt도 odt로 만들지 않고 글(txt)로만 옮긴다
+                        plines = make_paste.plain_text(newb)
+                        tp = out_path(it, ".txt", "_본문"); write_out(tp, (CRLF.join(plines) + CRLF).encode("utf-8-sig"))
+                        r["결과"].append(tp)
+                        r["odt글"] = True
+                        r["비고"].append("odt → 글(txt)만 만듦(odt는 만들지 않음). 빈칸·탭·줄 바꿈·목록 번호를 글에 그대로 옮김")
+                    elif title:
                         flog = list(jlog)
                         t2, lines2, items2 = gf.format_paste(title, pbody, patt, flog)
                         r["표시"] += gf.spacing_check(lines2)

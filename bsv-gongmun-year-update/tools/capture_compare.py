@@ -586,7 +586,8 @@ def main(argv=None):
                     left = '<div class="cell stack">' + "".join(
                         f'<div class="pg">{e(T["cap.page"].replace("{N}", str(i + 1)))}</div>' + page_cell(p, i + 1, "b") for i, p in enumerate(bm)) + "</div>"
                 t1 = read_txt(af)
-                right = text_panel(t1, T["cap.text_file"] if ext == ".txt" else T["cap.paste_text"], mark_text("a", t1))
+                paste = "_업무관리시스템_붙여넣기" in nname
+                right = text_panel(t1, T["cap.paste_text"] if (ext != ".txt" and paste) else T["cap.text_file"], mark_text("a", t1))
                 body.append(f'<div class="cols"><div class="colh">{e(T["detail.before"])}</div><div class="colh">{e(T["detail.after"])}</div></div>')
                 body.append(f'<div class="row">{left}{right}</div>')
                 sides = {"b", "a"}

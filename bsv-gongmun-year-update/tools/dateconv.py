@@ -57,11 +57,14 @@ def load_holidays(year, holiday_dir=None):
         return json.load(f)
 
 
-def configure(target_sy, holiday_dir=None, allow_unverified=False, src_years_back=3):
+def configure(target_sy, holiday_dir=None, allow_unverified=False, src_years_back=8):
     """대상 학년도와 공휴일 자료를 정한다. 반환: 경고 목록.
 
     대상 학년도에 들어가는 두 달력 연도(대상년, 대상년+1) 공휴일 자료가 없으면 멈춘다.
     대상 학년도 기간 안에 확인되지 않은 공휴일이 있으면, allow_unverified가 아닐 때 멈춘다.
+    src_years_back: 날짜로 인정할 가장 옛 연도(대상 학년도 - N). 2022·2023학년도 같은 옛 문서도 옮기도록 넉넉히 둔다.
+    문서 하나 안에서는 그 문서 학년도보다 REL_BACK년 넘게 앞선 연도를 옮기지 않는다(_src_lo).
+    원래 연도의 공휴일 자료는 없어도 된다(옮길 날만 대상 학년도 공휴일로 확인한다).
     """
     global TSY, SRC_LO, SRC_HI, HOLIDAYS, HOLIDAY_INFO, HOLIDAY_SOURCE, COVERED_YEARS, WARNINGS
     hd = holiday_dir or HOLIDAY_DIR
@@ -117,6 +120,16 @@ def configure(target_sy, holiday_dir=None, allow_unverified=False, src_years_bac
     WARNINGS = warn
     _compile()
     return warn
+
+
+REL_BACK = 2   # 문서 학년도보다 이만큼 넘게 앞선 연도는 지난 일(개교 연도 등)로 보고 그대로 둔다
+# 교육과정 이름의 연도(예: 2022 개정 교육과정)는 날짜·연도가 아니므로 표시 없이 그대로 둔다
+P_CURRIC = re.compile(r"(?<![\d.,])20\d{2}\s*(?:년\s*)?개정\s*(?:교육\s*과정|누리\s*과정|교과서|교과|교육과정)")
+
+
+def _src_lo(base_sy):
+    """이 문서에서 옮길 가장 옛 연도."""
+    return SRC_LO if base_sy is None else max(SRC_LO, base_sy - REL_BACK)
 
 
 def _need():
@@ -307,10 +320,13 @@ def _year_only(seg, years, base_sy, where, free, taken, reps, changes, flags, of
         if y != base_sy:
             flags.append({"분류": "다른 연도 표기", "위치": where, "원문": raw,
                           "설명": f"{y} → {y + years}(문서 작업 학년도 {base_sy}와 다른 연도도 같은 만큼 옮김)"})
+    lo = _src_lo(base_sy)
     for m in P_YY_SCHOOLYEAR.finditer(seg):
         if not free(m.start(), m.end()):
             continue
         y = 2000 + int(m.group("yy"))
+        if y < lo:
+            continue
         taken.append(m.span("yy"))
         new = f"{(y + years) % 100:02d}"
         reps.append((m.start("yy") + offset0, m.end("yy") + offset0, new))
@@ -320,8 +336,10 @@ def _year_only(seg, years, base_sy, where, free, taken, reps, changes, flags, of
         for m in pat.finditer(seg):
             if not free(m.start(), m.end()):
                 continue
-            taken.append((m.start(), m.end()))
             y = int(m.group("y"))
+            if y < lo:
+                continue
+            taken.append((m.start(), m.end()))
             reps.append((m.start() + offset0, m.end() + offset0, str(y + years)))
             ctx = seg[max(0, m.start() - 6): m.end() + 5]
             changes.append({"위치": where, "원문": ctx, "새글": str(y + years), "규칙": tag})
@@ -331,7 +349,7 @@ def _year_only(seg, years, base_sy, where, free, taken, reps, changes, flags, of
             continue
         y = int(m.group("y"))
         ctx = seg[max(0, m.start() - 12): m.end() + 12]
-        if SRC_LO <= y <= TSY:
+        if lo <= y <= TSY:
             taken.append((m.start(), m.end()))
             reps.append((m.start() + offset0, m.end() + offset0, str(y + years)))
             changes.append({"위치": where, "원문": ctx.strip(), "새글": str(y + years), "규칙": tag})
@@ -556,6 +574,9 @@ def convert(text, base_sy=None, years=None, where="", date_context=False, shift_
         if re.search(r"20\d{2}|\d{1,2}\s*\.\s*\d{1,2}\.", text[a:b]):
             flags.append({"분류": "관련 문서·법령 날짜", "위치": where, "원문": text[a:b][:80],
                           "설명": "문서번호·법령 인용이라 그대로 둠"})
+    for m in P_CURRIC.finditer(text):
+        if all(m.end() <= x or m.start() >= y for x, y in prot):
+            prot.append((m.start(), m.end()))
     for a, b in prot:
         taken.append((a, b))
 
@@ -569,7 +590,7 @@ def convert(text, base_sy=None, years=None, where="", date_context=False, shift_
                 continue
             y = 2000 + int(m.group("yy")) if "yy" in pat.groupindex else int(m.group("y"))
             d = _valid(y, int(m.group("m")), int(m.group("d")))
-            if not d or not (SRC_LO <= y <= SRC_HI):
+            if not d or not (_src_lo(base_sy) <= y <= SRC_HI):
                 continue
             found.append(Match(m, "full", d))
             taken.append((m.start(), m.end()))
@@ -766,7 +787,7 @@ def convert(text, base_sy=None, years=None, where="", date_context=False, shift_
             if not free(m.start(), m.end()):
                 continue
             y, mo = int(m.group("y")), int(m.group("m"))
-            if not (SRC_LO <= y <= SRC_HI) or not (1 <= mo <= 12):
+            if not (_src_lo(base_sy) <= y <= SRC_HI) or not (1 <= mo <= 12):
                 continue
             taken.append((m.start(), m.end()))
             ny = target_year(mo)
@@ -801,7 +822,7 @@ def convert(text, base_sy=None, years=None, where="", date_context=False, shift_
                 continue
             y = int(m.group("y")) if kind == 8 else 2000 + int(m.group("yy"))
             d = _valid(y, int(m.group("m")), int(m.group("d")))
-            if not d:
+            if not d or y < _src_lo(base_sy):
                 continue
             ctx = NUM_CTX.search(text[max(0, m.start() - 16):m.start()])
             after_bad = NUM_BAD_AFTER.match(text[m.end():m.end() + 3])
