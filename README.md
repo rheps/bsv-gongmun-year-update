@@ -14,6 +14,22 @@ curl -fsSL --retry 3 --retry-all-errors -H "Accept: application/vnd.github.raw" 
 
 설치 프로그램은 Python을 확인하고 필요한 Python 패키지를 설치한 뒤, 스킬을 Claude Code, Codex, Antigravity의 스킬 폴더에 복사합니다. 업데이트할 때 다시 실행해도 됩니다.
 
+### AI 에이전트 안에서 설치하기
+
+Claude Code, Codex, Antigravity를 닫지 않고 그 안에서 바로 스킬을 설치할 수도 있습니다. 에이전트에 아래 문장을 입력하세요.
+
+```
+https://github.com/rheps/bsv-gongmun-year-update 이 스킬을 설치해 줘
+```
+
+예시 공문도 같은 방법으로 받으려면 아래 문장을 입력하세요.
+
+```
+이 링크에서 예시 공문을 받아서 압축을 풀어 줘: https://api.github.com/repos/rheps/bsv-gongmun-year-update/contents/examples/sample-gongmun.zip
+```
+
+에이전트는 켜질 때 새 스킬을 찾습니다. 설치한 뒤에는 에이전트를 닫았다가 다시 여세요. 닫지 않은 같은 대화에서도 에이전트가 설치한 스킬의 안내문을 읽고 작업할 수 있습니다.
+
 ## 예시 공문으로 해 보기
 
 아래 줄을 실행하면 지금 폴더에 예시 폴더 작년공문을 내려받습니다. 예시는 꾸며 낸 공문이며 오타를 일부러 넣었습니다.
