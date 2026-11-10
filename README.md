@@ -2,6 +2,8 @@
 
 작년 공문과 첨부 파일을 이번 학년도 버전으로 바꾸는 스킬입니다. Windows에서 Claude Code, Codex, Antigravity로 쓸 수 있습니다.
 
+> **AI coding agents** (Claude Code, Codex, Antigravity): to install this skill or fetch the example 공문 for the user, follow [INSTALL-FOR-AI.md](INSTALL-FOR-AI.md).
+
 ## 설치
 
 Windows 명령 프롬프트(cmd)를 열고 아래 줄을 붙여 넣은 뒤 Enter를 누르세요.
