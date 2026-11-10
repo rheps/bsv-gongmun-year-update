@@ -13,7 +13,7 @@ Run these in the shell you already have (cmd syntax shown; in PowerShell or Git 
    tar -xf "%TEMP%\bsv-gongmun-src\repo.zip" -C "%TEMP%\bsv-gongmun-src"
    ```
    The zip holds one folder named `rheps-bsv-gongmun-year-update-<commit>`.
-2. Run the installer that is in that folder with the user's Python (3.10 or later): `py -3 install.py` (if `py` is missing, use `python install.py`). Run it from inside the extracted folder. It:
+2. Always run the installer, even if a copy of the skill already seems to be installed: it updates in place, and the skill folders it uses come from the `USERPROFILE` environment variable, which may not be the folder you would guess. Do not compare or edit existing copies yourself. Run the installer that is in that folder with the user's Python (3.10 or later): `py -3 install.py` (if `py` is missing, use `python install.py`). Run it from inside the extracted folder. It:
    - runs `pip install -r requirements.txt` (kiwipiepy is optional; a failure there only prints a note),
    - copies the skill folder `bsv-gongmun-year-update` into all three skill folders:
      - Claude Code: `%USERPROFILE%\.claude\skills\bsv-gongmun-year-update`

@@ -65,10 +65,12 @@ def lo_pdf(src, out_pdf, work):
     s = os.path.join(tmp, "in" + os.path.splitext(src)[1])
     shutil.copy2(pl.L(src), s)
     prof = "file:///" + os.path.join(work, "lo_profile").replace("\\", "/")
-    subprocess.run([office.soffice(), "-env:UserInstallation=" + prof, "--headless", "--norestore",
-                    "--convert-to", "pdf", "--outdir", tmp, s], check=True, timeout=240, capture_output=True)
-    shutil.move(os.path.join(tmp, "in.pdf"), out_pdf)
-    shutil.rmtree(tmp, ignore_errors=True)
+    try:
+        subprocess.run([office.soffice(), "-env:UserInstallation=" + prof, "--headless", "--norestore",
+                        "--convert-to", "pdf", "--outdir", tmp, s], check=True, timeout=240, capture_output=True)
+        shutil.move(os.path.join(tmp, "in.pdf"), out_pdf)
+    finally:
+        shutil.rmtree(tmp, ignore_errors=True)   # 실패해도 원본 사본(in.odt 등)을 남기지 않는다
 
 
 def raster(pdf, img_dir, key):

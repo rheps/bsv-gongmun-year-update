@@ -40,7 +40,15 @@ def zbytes(members):
 def odt(body_xml):
     content = (f'<?xml version="1.0" encoding="UTF-8"?><office:document-content {NS}>{LIST_STYLES}'
                f'<office:body><office:text>{body_xml}</office:text></office:body></office:document-content>')
-    return zbytes({"mimetype": "application/vnd.oasis.opendocument.text", "content.xml": content})
+    manifest = ('<?xml version="1.0" encoding="UTF-8"?><manifest:manifest xmlns:manifest="urn:oasis:names:tc:opendocument:xmlns:manifest:1.0" manifest:version="1.2">'
+                '<manifest:file-entry manifest:full-path="/" manifest:media-type="application/vnd.oasis.opendocument.text"/>'
+                '<manifest:file-entry manifest:full-path="content.xml" manifest:media-type="text/xml"/></manifest:manifest>')
+    b = io.BytesIO()
+    with zipfile.ZipFile(b, "w") as z:   # mimetype 먼저, 압축 없이(LibreOffice가 여는 odt)
+        z.writestr(zipfile.ZipInfo("mimetype"), "application/vnd.oasis.opendocument.text", compress_type=zipfile.ZIP_STORED)
+        z.writestr("content.xml", content, compress_type=zipfile.ZIP_DEFLATED)
+        z.writestr("META-INF/manifest.xml", manifest, compress_type=zipfile.ZIP_DEFLATED)
+    return b.getvalue()
 
 
 def P(x):
